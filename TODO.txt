@@ -28,3 +28,11 @@ CREATE ASSOCIATIONS
 MAKE CLASSES INSTANTIABLE
 
 CREATE SPECIALIZED METHODS
+
+______________11/13/2015____________
+ModelRecord::index should return objects, not query response
+ModelRecord::find should account for record not found
+ModelRecord::delete should account for record not found
+database.class.php and model_record.class.php need documentation
+universal snake_case naming conventions
+

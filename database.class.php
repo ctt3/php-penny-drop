@@ -3,7 +3,7 @@ class Database {
 	protected static $connection;
 
 	public static function connect(){
-		$config = parse_ini_file('./config.ini');
+		$config = parse_ini_file('config.ini');
 		self::$connection = new mysqli('127.0.0.1', $config['username'], $config['password'], $config['dbname']);
 		if (self::$connection->connect_errno) {
 			echo self::$connection->connect_errno . ": " . self::$connection->connect_error;
