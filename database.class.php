@@ -39,7 +39,7 @@ class Database {
 		$sql = "insert into " . $table . " (" . $columns . ") Values (" . $values . ")";
 		$result = self::execute_insert_query($sql);
 		if($result != false) {
-			return self::select($table, "id = " . $result);
+			return self::select($table, "id = " . $result)[0];
 		} else{ return $result; }
 	}
 
@@ -47,7 +47,7 @@ class Database {
   	$sql = "update " . $table . " set " . $column_values . " where id = " . $id;
 		$result = self::execute_query($sql);
 		if($result != false) {
-			return self::select($table, "id = " . $id);
+			return self::select($table, "id = " . $id)[0];
 		} else{ return $result; }
 	}
 
