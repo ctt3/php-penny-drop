@@ -1,22 +1,22 @@
 <?php
 
 class ModelRecord {
-  //Class properties
-  public static $table_name;
-
   //**Class methods
   public static function index(){
-    return Database::select(static::$table_name, "1");
+    $table_name = strtolower( static::class );
+    return Database::select($table_name, "1");
   }
 
   public static function find($id){
-    $result = Database::select(static::$table_name, "id = " . $id)[0];
+    $table_name = strtolower( static::class );
+    $result = Database::select($table_name, "id = " . $id)[0];
     $obj = new static();
     static::assign_instance_variables($obj, $result);
     return $obj;
   }
 
   public static function create($attribute_hash){
+    $table_name = strtolower( static::class );
     $columns = "";
     $values = "";
     $last_value = end($attribute_hash);
@@ -29,7 +29,7 @@ class ModelRecord {
         $values .= "'" . $value . "', ";
       }
     }
-    $result = Database::insert(static::$table_name, $columns, $values);
+    $result = Database::insert($table_name, $columns, $values);
     if ($result != false){ 
       $obj = new static();
       static::assign_instance_variables($obj, $result);
@@ -38,7 +38,8 @@ class ModelRecord {
   }
 
   public static function delete($id){
-    return Database::delete(static::$table_name, $id);
+    $table_name = strtolower( static::class );
+    return Database::delete($table_name, $id);
   }
 
   public static function assign_instance_variables($obj, $query_result){
@@ -46,9 +47,8 @@ class ModelRecord {
   }
 
   //**Instance methods
-  function ModelRecord(){}
-
   public function update_attributes($attribute_hash){
+    $table_name = strtolower( static::class );
     $values = "";
     $last_value = end($attribute_hash);
     foreach ($attribute_hash as $attribute => $value){
@@ -56,7 +56,7 @@ class ModelRecord {
         $values .= $attribute . " = '" . $value . "'";
       }else{ $values .= $attribute . " = '" . $value . "', "; }
     }
-    $result = Database::update(static::$table_name, $values, $this->id);
+    $result = Database::update($table_name, $values, $this->id);
     static::assign_instance_variables($this, $result);
   }
 }
