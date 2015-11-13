@@ -1,0 +1,30 @@
+--> Create Framework
+**Create MySQL query class
+**Create methods that make inserting, deleting, updating easy
+Create classes for each object
+Include MySQL class in classes
+Create methods that get/set attributes of db, in classes
+
+-->CHECKLIST
+__________________________________________
+
+CLASSES TO CREATE:
+	Penny Bank
+	Survey
+	User Survey
+	Donation
+	Payment
+	Charity
+	Project
+
+CREATE ASSOCIATIONS
+	penny_bank - User
+		User::get_penny_bank
+		penny_bank::get_user
+		user should have penny_bank_id
+		or just make amount_available an attribute on user
+	etc...
+
+MAKE CLASSES INSTANTIABLE
+
+CREATE SPECIALIZED METHODS
