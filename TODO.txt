@@ -23,11 +23,33 @@ CLASSES TO CREATE:
 	Donation
 	Payment
 	Charity
-	Project
+	Cart(hasMany Donations)
 
-______________11/13/2015____________
+______________11/14/2015____________
+Models___________->
 ModelRecord::find should account for record not found
 ModelRecord::delete should account for record not found
 universal snake_case naming conventions
-controller classes
 
+Controllers______->
+methods called via 'action' params, 
+take in post params, manipulate objects and redirect
+
+Views____________->
+Login/Signup (User Create)
+User Settings (User Update/Delete)
+Charity Index
+Survey Index
+MyCharity (Charity Create/Update/Delete)
+MySurvey (Survey Create/Update/Delete)
+Cart (Cart Update)
+Payment (Payment Create)
+
+Flow______________->
+User logs in
+Can Create Charity (accepts donations)
+Can Create Survey - User puts up money for people to take this survey
+Can Donate to Charity (available_pennies decrease)
+Can Complete Survey (available_pennies increase)
+Can Edit User/Charity/Survey info
+Pays for Cart
