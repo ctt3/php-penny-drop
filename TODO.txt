@@ -1,15 +1,23 @@
 --> Create Framework
-**Create MySQL query class
-**Create methods that make inserting, deleting, updating easy
-Create classes for each object
-Include MySQL class in classes
-Create methods that get/set attributes of db, in classes
-
 -->CHECKLIST
+
+Your project should take 7 minutes to present and should include the following items:
+
+() - Normalization
+() - ER Diagram
+() - Table DDL (minimum 7)
+() - View DDL (minimum 1)
+() - Procedures DDL (minimum 1)
+() - Function DDL (minimum 1)
+() - Trigger DDL (minimum 1)
+() - DML Statements that are driven by user forms
+() - Simple user forms
+() - Simple reports
+() - Describe Integrity Enforcement Used, Where, Why
+() - Describe Isolation Level Used, Where, Why
 __________________________________________
 
 CLASSES TO CREATE:
-	Penny Bank
 	Survey
 	User Survey
 	Donation
@@ -17,22 +25,9 @@ CLASSES TO CREATE:
 	Charity
 	Project
 
-CREATE ASSOCIATIONS
-	penny_bank - User
-		User::get_penny_bank
-		penny_bank::get_user
-		user should have penny_bank_id
-		or just make amount_available an attribute on user
-	etc...
-
-MAKE CLASSES INSTANTIABLE
-
-CREATE SPECIALIZED METHODS
-
 ______________11/13/2015____________
-ModelRecord::index should return objects, not query response
 ModelRecord::find should account for record not found
 ModelRecord::delete should account for record not found
-database.class.php and model_record.class.php need documentation
 universal snake_case naming conventions
+controller classes
 
