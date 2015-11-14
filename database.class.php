@@ -66,6 +66,16 @@ class Database {
 			return $rows;
 		} else{ return $result; }
 	}
+
+	public static function get_column_names($table){
+		$sql = "show columns from " . $table;
+		$result = self::execute_query($sql);
+		if($result != false) {
+			$rows = array();
+			while ($row = mysqli_fetch_assoc($result)) { $rows[] = $row['Field']; }
+			return $rows;
+		} else{ return $result; }
+	}
 }
 
 ?>

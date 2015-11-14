@@ -4,7 +4,14 @@ class ModelRecord {
   //**Class methods
   public static function index(){
     $table_name = strtolower( static::class );
-    return Database::select($table_name, "1");
+    $result = Database::select($table_name, "1");
+    $objects = array();
+    foreach ($result as $index => $value_set){
+      $obj = new static();
+      static::assign_instance_variables($obj, $value_set);
+      $objects[$index] = $obj;
+    }
+    return $objects;
   }
 
   public static function find($id){
@@ -42,8 +49,27 @@ class ModelRecord {
     return Database::delete($table_name, $id);
   }
 
+  public static function attribute_names(){
+    $table_name = strtolower( static::class );
+    return Database::get_column_names($table_name);
+  }
+
   public static function assign_instance_variables($obj, $query_result){
     foreach($query_result as $attribute => $value) $obj->$attribute = $value;
+  }
+
+  public static function display_index_table(){
+    $objects = static::index();
+    $attributes = static::attribute_names();
+    echo "<table border=1><tr>";
+    foreach($attributes as $index => $column){ echo "<th>" . $column . "</th>"; }
+    echo "</tr>";
+    foreach($objects as $index => $obj){
+      echo "<tr>";
+      foreach($attributes as $index => $column){ echo "<td>" . $obj->$column . "</td>"; }
+      echo "</tr>";
+    }
+    echo "</table>";
   }
 
   //**Instance methods
