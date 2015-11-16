@@ -26,6 +26,8 @@ CLASSES TO CREATE:
 	Cart(hasMany Donations)
 
 ______________11/14/2015____________
+	ORGANIZE INTO MODELS/VIEWS/CONTROLLERS
+
 Models___________->
 ModelRecord::find should account for record not found
 ModelRecord::delete should account for record not found
