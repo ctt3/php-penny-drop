@@ -1,6 +1,6 @@
 <?php
 
-include 'controller_record.class.php';
+include '../Base/controller_record.class.php';
 
 class UserController extends ControllerRecord{
 
