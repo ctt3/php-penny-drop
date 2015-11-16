@@ -13,7 +13,9 @@ class ControllerRecord {
     echo "<script>window.location = '". $url . "'</script>";
   }
 
-  public static function route(){
+  function ControllerRecord(){
+    // call action method on inheriting class
+    // reroute to view named class/method.php
     $action_request = $_REQUEST['action'];
     if (in_array($action_request, self::$actions)){
       static::$action_request();
@@ -21,5 +23,4 @@ class ControllerRecord {
     }
   }
 }
-
 ?>

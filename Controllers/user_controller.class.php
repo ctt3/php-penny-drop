@@ -10,5 +10,5 @@ class UserController extends ControllerRecord{
   public static function delete(){echo 'delete';}
 }
 
-UserController::route();
+new UserController();
 ?>
