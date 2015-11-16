@@ -6,10 +6,10 @@ class ControllerRecord {
 
   public static function render($action){
     // send to correct view
-    $domain = parse_ini_file('config.ini')['domain'];
+    $domain = $_SERVER['SERVER_NAME'];
     $controller_class = str_replace("Controller", "", static::class);
     $view =  $action . ".php";
-    $url = $domain . "/views/" . $controller_class . "/" . $view;
+    $url = "http://" . $domain . "/views/" . $controller_class . "/" . $view;
     echo "<script>window.location = '". $url . "'</script>";
   }
 
