@@ -116,6 +116,7 @@ function from_camel_case($input) {
   return implode('_', $ret);
 }
 
+//**************************************************************//
 
 class ModelRecord {
 
@@ -234,7 +235,7 @@ class ModelRecord {
 
 class ControllerRecord {
 
-  protected static $actions = array('index', 'create', 'update', 'delete');
+  protected static $actions = array('index', 'create', 'edit', 'update', 'delete');
 
   public static function render($action){
     // send to correct view

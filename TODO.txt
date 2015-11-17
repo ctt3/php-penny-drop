@@ -3,9 +3,9 @@
 
 Your project should take 7 minutes to present and should include the following items:
 
-() - Normalization
-() - ER Diagram
-() - Table DDL (minimum 7)
+(x) - Normalization
+(x) - ER Diagram
+(x) - Table DDL (minimum 7)
 () - View DDL (minimum 1)
 () - Procedures DDL (minimum 1)
 () - Function DDL (minimum 1)
@@ -15,17 +15,8 @@ Your project should take 7 minutes to present and should include the following i
 () - Simple reports
 () - Describe Integrity Enforcement Used, Where, Why
 () - Describe Isolation Level Used, Where, Why
-__________________________________________
 
-CLASSES TO CREATE:
-	Survey
-	User Survey
-	Donation
-	Payment
-	Charity
-	Cart(hasMany Donations)
-
-______________11/14/2015____________
+______________11/17/2015____________
 	screenshot ER diagram and add to repository
 
 Models___________->
@@ -35,7 +26,6 @@ universal snake_case naming conventions
 
 Controllers______->
 take in post params, manipulate objects and redirect
-add 'edit' to all controllers
 
 Views____________->
 Login/Signup (User Create)
