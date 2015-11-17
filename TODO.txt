@@ -26,6 +26,10 @@ universal snake_case naming conventions
 
 Controllers______->
 take in post params, manipulate objects and redirect
+add 'save' to all controllers
+add edit/delete/create to all index
+figure out how to pass vars from controller to view
+eventually separate back out the base class
 
 Views____________->
 Login/Signup (User Create)

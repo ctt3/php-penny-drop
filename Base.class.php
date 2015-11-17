@@ -235,7 +235,7 @@ class ModelRecord {
 
 class ControllerRecord {
 
-  protected static $actions = array('index', 'create', 'edit', 'update', 'delete');
+  protected static $actions = array('index', 'create', 'edit', 'update', 'save', 'delete');
 
   public static function render($action){
     // send to correct view
