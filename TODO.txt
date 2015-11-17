@@ -26,7 +26,7 @@ CLASSES TO CREATE:
 	Cart(hasMany Donations)
 
 ______________11/14/2015____________
-	ORGANIZE INTO MODELS/VIEWS/CONTROLLERS
+	screenshot ER diagram and add to repository
 
 Models___________->
 ModelRecord::find should account for record not found
@@ -34,8 +34,8 @@ ModelRecord::delete should account for record not found
 universal snake_case naming conventions
 
 Controllers______->
-methods called via 'action' params, 
 take in post params, manipulate objects and redirect
+add 'edit' to all controllers
 
 Views____________->
 Login/Signup (User Create)
