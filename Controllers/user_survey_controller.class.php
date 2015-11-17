@@ -2,7 +2,7 @@
 
 include '../Base.class.php';
 
-class UserController extends ControllerRecord{
+class UserSurveyController extends ControllerRecord{
 
   public static function index(){}
   public static function create(){}
@@ -10,5 +10,5 @@ class UserController extends ControllerRecord{
   public static function delete(){}
 }
 
-new UserController();
+new UserSurveyController();
 ?>
