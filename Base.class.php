@@ -237,11 +237,22 @@ class ControllerRecord {
 
   protected static $actions = array('index', 'create', 'edit', 'update', 'save', 'delete');
 
-  public static function render($action){
+  public static function render($action, $params=array()){
     // send to correct view
     $controller_class = str_replace("Controller", "", static::class);
     $view =  $action . ".php";
     $url = ROOT_PATH . "/Views/" . $controller_class . "/" . $view;
+    if (count($params) > 0){
+      $url .= "?";
+      $last_value = end($params);
+      foreach ($params as $param => $value){
+        if ($value == $last_value){
+          $url .= $param . "=" . $value;
+        }else {
+          $url .= $param . "=" . $value . "&";
+        }
+      }
+    }
     echo "<script>window.location = '". $url . "'</script>";
   }
 
@@ -250,8 +261,8 @@ class ControllerRecord {
     // reroute to view named class/method.php
     $action_request = $_REQUEST['action'];
     if (in_array($action_request, self::$actions)){
-      static::$action_request();
-      static::render($action_request);
+      $params = static::$action_request();
+      static::render($action_request, $params);
     }
   }
 }

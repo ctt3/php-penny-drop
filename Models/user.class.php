@@ -13,9 +13,10 @@ class User extends ModelRecord{
 
   public function display_edit_form(){
     echo "<form action='../../Controllers/user_controller.class.php?action=update' method='post'>";
-    echo "Name: <input type='text' name='name' value=".$this->name."/><br />";
-    echo "Username: <input type='text' name='username' value=".$this->username."/><br />";
-    echo "Password: <input type='password' name='password' value=".$this->password."/><br />";
+    echo "<input type='hidden' name='id' value=".$this->id." />";
+    echo "Name: <input type='text' name='name' value=".$this->name." /><br />";
+    echo "Username: <input type='text' name='username' value=".$this->username." /><br />";
+    echo "Password: <input type='password' name='password' value=".$this->password." /><br />";
     echo "<input type='submit' value='Update' />";
     echo "</form>";
   }
