@@ -17,7 +17,8 @@ Your project should take 7 minutes to present and should include the following i
 () - Describe Isolation Level Used, Where, Why
 
 ______________11/17/2015____________
-	screenshot ER diagram and add to repository
+  create fake data generator
+  flush out creates, edits, deletes and forms to all models/controllers
 
 Models___________->
 ModelRecord::find should account for record not found
@@ -25,10 +26,7 @@ ModelRecord::delete should account for record not found
 universal snake_case naming conventions
 
 Controllers______->
-take in post params, manipulate objects and redirect
 add 'save' to all controllers
-add edit/delete/create to all index
-figure out how to pass vars from controller to view
 eventually separate back out the base class
 
 Views____________->

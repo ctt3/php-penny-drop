@@ -194,17 +194,23 @@ class ModelRecord {
 
   public static function display_index_table(){
     // Action: Draw HTML for table of all records in table
+    $controller_path = ROOT_PATH . "/Controllers/" . from_camel_case( static::class ) . "_controller.class.php";
     $objects = static::index();
     $attributes = static::attribute_names();
     echo "<table border=1><tr>";
     foreach($attributes as $index => $column){ echo "<th>" . $column . "</th>"; }
+    echo "<th>Actions</th>";
     echo "</tr>";
     foreach($objects as $index => $obj){
       echo "<tr>";
       foreach($attributes as $index => $column){ echo "<td>" . $obj->$column . "</td>"; }
+      echo "<td><a href='".$controller_path."?action=edit&id=".$obj->id."'>Edit</a>";
+      echo "&nbsp;&nbsp;";
+      echo "<a href='".$controller_path."?action=delete&id=".$obj->id."'>Delete</a></td>";
       echo "</tr>";
     }
     echo "</table>";
+    echo "<a href='".$controller_path."?action=create'>Create New</a><br/>";
   }
 
   //**Instance methods
@@ -227,7 +233,7 @@ class ModelRecord {
     // Action: Delete record from db
     // Output: Query result
     $table_name = from_camel_case( static::class );
-    return Database::delete($table_name, $this->$id);
+    return Database::delete($table_name, $this->id);
   }
 }
 

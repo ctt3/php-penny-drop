@@ -23,7 +23,10 @@ class UserController extends ControllerRecord{
     User::create($new_user_array);
   }
 
-  public static function delete(){}
+  public static function delete(){
+    $user = User::find($_REQUEST['id']);
+    $user->self_destruct();
+  }
 }
 
 new UserController();
