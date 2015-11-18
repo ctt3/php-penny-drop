@@ -19,6 +19,9 @@ Your project should take 7 minutes to present and should include the following i
 ______________11/17/2015____________
   create fake data generator
   flush out creates, edits, deletes and forms to all models/controllers
+  database should not allow duplicate usernames
+  database should update payment_fulfilled fields when payment is created
+  form validations
 
 Models___________->
 ModelRecord::find should account for record not found
