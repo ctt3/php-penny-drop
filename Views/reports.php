@@ -12,3 +12,5 @@
 <br/>
 <a href="../Controllers/user_survey_controller.class.php?action=index">UserSurvey Index</a>
 <br/>
+<a href="../Controllers/response_controller.class.php?action=index">Response Index</a>
+<br/>
