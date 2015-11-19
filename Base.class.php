@@ -262,6 +262,14 @@ class ControllerRecord {
     echo "<script>window.location = '". $url . "'</script>";
   }
 
+  public static function clean_post($post){
+    $new_post = array();
+    foreach($post as $key => $val){
+      if (strlen($val) > 0) $new_post[$key] = $val;
+    }
+    return $new_post;
+  }
+
   function ControllerRecord(){
     // call action method on inheriting class
     // reroute to view named class/method.php
@@ -284,12 +292,12 @@ class ControllerRecord {
     $model = ucfirst($this->model_name);
     $obj = $model::find($_POST['id']);
     unset($_POST['id']);
-    $obj->update_attributes($_POST);
+    $obj->update_attributes(self::clean_post($_POST));
   }
 
   public function save(){
     $model = ucfirst($this->model_name);
-    $model::create($_POST);
+    $model::create(self::clean_post($_POST));
   }
 
   public function delete(){

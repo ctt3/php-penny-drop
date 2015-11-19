@@ -10,19 +10,31 @@ Your project should take 7 minutes to present and should include the following i
 () - Procedures DDL (minimum 1)
 () - Function DDL (minimum 1)
 () - Trigger DDL (minimum 1)
-() - DML Statements that are driven by user forms
-() - Simple user forms
-() - Simple reports
+(x) - DML Statements that are driven by user forms
+(x) - Simple user forms
+(x) - Simple reports
 () - Describe Integrity Enforcement Used, Where, Why
 () - Describe Isolation Level Used, Where, Why
 
-______________11/17/2015____________
+______________11/18/2015____________
   create fake data generator
   flush out creates, edits, deletes and forms to all models/controllers
+
   database should not allow duplicate usernames
   database should update payment_fulfilled fields when payment is created
-  form validations
+  **form validations
   ensure that objects are not orphaned (deleting survey deletes questions)
+
+	YOU NEED A RESPONSES CLASS (id, userid, surveyid, questionid, response)
+				-UserSurvey, User, Survey, Question has many responses
+
+	Donation->payment_complete may need to become bigint and hold amount paid
+	User may need a permissions field
+
+	Cost Conversion formatting from cents to dollar format
+	Completed date formatting and correct insertion
+
+	add links to dependencies on index page
 
 Models___________->
 ModelRecord::find should account for record not found
@@ -30,7 +42,6 @@ ModelRecord::delete should account for record not found
 universal snake_case naming conventions
 
 Controllers______->
-add 'save' to all controllers
 eventually separate back out the base class
 
 Views____________->
