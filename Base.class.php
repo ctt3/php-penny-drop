@@ -266,11 +266,38 @@ class ControllerRecord {
     // call action method on inheriting class
     // reroute to view named class/method.php
     $action_request = $_REQUEST['action'];
+    $this->model_name = strtolower(str_replace("Controller", "", static::class));
     if (in_array($action_request, self::$actions)){
-      $params = static::$action_request();
+      $params = $this->$action_request();
       static::render($action_request, $params);
     }
   }
+
+  public function index(){}
+  public function create(){}
+
+  public function edit(){
+    return array('id'=>$_REQUEST['id']);
+  }
+
+  public function update(){
+    $model = ucfirst($this->model_name);
+    $obj = $model::find($_POST['id']);
+    unset($_POST['id']);
+    $obj->update_attributes($_POST);
+  }
+
+  public function save(){
+    $model = ucfirst($this->model_name);
+    $model::create($_POST);
+  }
+
+  public function delete(){
+    $model = ucfirst($this->model_name);
+    $obj = $model::find($_REQUEST['id']);
+    $obj->self_destruct();
+  }
+
 }
 
 ?>
