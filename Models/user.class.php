@@ -20,6 +20,16 @@ class User extends ModelRecord{
     echo "<input type='submit' value='Update' />";
     echo "</form>";
   }
+
+  public function donations(){
+    include_once 'donation.class.php';
+    return $this->get_dependents('donation');
+  }
+
+  public function surveys(){
+    include_once 'user_survey.class.php';
+    return $this->get_dependents('user_survey');
+  }
 }
 
 ?>

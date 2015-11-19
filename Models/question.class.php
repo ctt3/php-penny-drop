@@ -17,5 +17,10 @@ class Question extends ModelRecord{
     echo "<input type='submit' value='Update' />";
     echo "</form>";
   }
+
+  public function responses(){
+    include_once 'response.class.php';
+    return $this->get_dependents('response');
+  }
 }
 ?>

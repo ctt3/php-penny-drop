@@ -17,16 +17,13 @@ Your project should take 7 minutes to present and should include the following i
 () - Describe Isolation Level Used, Where, Why
 
 ______________11/18/2015____________
-  create fake data generator
-  flush out creates, edits, deletes and forms to all models/controllers
+!!!!!!!!!!DOCUMENTATION*DOCUMENTATION*DOCUMENTATION*DOCUMENTATION*DOCUMENTATION*DOCUMENTATION!!!!!!!!
 
-  database should not allow duplicate usernames
+  create fake data generator
+
   database should update payment_fulfilled fields when payment is created
   **form validations
   ensure that objects are not orphaned (deleting survey deletes questions)
-
-	YOU NEED A RESPONSES CLASS (id, userid, surveyid, questionid, response)
-				-UserSurvey, User, Survey, Question has many responses
 
 	Donation->payment_complete may need to become bigint and hold amount paid
 	User may need a permissions field
@@ -35,6 +32,11 @@ ______________11/18/2015____________
 	Completed date formatting and correct insertion
 
 	add links to dependencies on index page
+
+	sql error catching should generate a message in the controller and return it
+			so that it can be displayed after render
+
+	modelrecord find should error appropriately if not found
 
 Models___________->
 ModelRecord::find should account for record not found

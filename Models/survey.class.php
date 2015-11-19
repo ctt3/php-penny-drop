@@ -22,6 +22,18 @@ class Survey extends ModelRecord{
     echo "<input type='submit' value='Update' />";
     echo "</form>";
   }
+  public function questions(){
+    include_once 'question.class.php';
+    return $this->get_dependents('question');
+  }
+  public function user_surveys(){
+    include_once 'user_survey.class.php';
+    return $this->get_dependents('user_survey');
+  }
+  public function donations(){
+    include_once 'donation.class.php';
+    return $this->get_dependents('donation');
+  }
 }
 
 ?>

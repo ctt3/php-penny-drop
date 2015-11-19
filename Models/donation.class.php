@@ -21,6 +21,11 @@ class Donation extends ModelRecord{
     echo "<input type='submit' value='Update' />";
     echo "</form>";
   }
+
+  public function payments(){
+    include_once 'payment.class.php';
+    return $this->get_dependents('payment');
+  }
 }
 
 ?>

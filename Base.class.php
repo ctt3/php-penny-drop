@@ -235,6 +235,20 @@ class ModelRecord {
     $table_name = from_camel_case( static::class );
     return Database::delete($table_name, $this->id);
   }
+
+  public function get_dependents($dependent_table){
+    $tableid = from_camel_case( static::class ) . "id";
+    $dependent_model = str_replace("_", "", ucwords($dependent_table, "_ \t\r\n\f\v"));
+    $result = Database::select($dependent_table, $tableid."=".$this->id);
+    $objects = array();
+    foreach ($result as $index => $value_set){
+      $obj = new $dependent_model();
+      self::assign_instance_variables($obj, $value_set);
+      $objects[$index] = $obj;
+    }
+    return $objects;
+
+  }
 }
 
 //**************************************************************//

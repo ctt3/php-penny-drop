@@ -19,6 +19,10 @@ class Charity extends ModelRecord{
     echo "</form>";
   }
 
+  public function donations(){
+    include_once 'donation.class.php';
+    return $this->get_dependents('donation');
+  }
 }
 
 ?>
