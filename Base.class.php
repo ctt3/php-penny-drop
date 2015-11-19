@@ -237,6 +237,10 @@ class ModelRecord {
   }
 
   public function get_dependents($dependent_table){
+    // Input: String name of dependent table
+    // Action: instantiatesobjects of dependent table class that have
+    //          a foreign key that relates to current object
+    // Output: Array of objects of dependent class
     $tableid = from_camel_case( static::class ) . "id";
     $dependent_model = str_replace("_", "", ucwords($dependent_table, "_ \t\r\n\f\v"));
     $result = Database::select($dependent_table, $tableid."=".$this->id);
@@ -277,6 +281,8 @@ class ControllerRecord {
   }
 
   public static function clean_post($post){
+    // makes sure blank strings are not sent to db
+    // TODO: make sure this doesn't stop users from clearing fields****************
     $new_post = array();
     foreach($post as $key => $val){
       if (strlen($val) > 0) $new_post[$key] = $val;
@@ -299,10 +305,13 @@ class ControllerRecord {
   public function create(){}
 
   public function edit(){
+    // passes the id along to the rendered view
     return array('id'=>$_REQUEST['id']);
   }
 
   public function update(){
+    // finds the appropriate record
+    // updates its attributes
     $model = ucfirst($this->model_name);
     $obj = $model::find($_POST['id']);
     unset($_POST['id']);
@@ -310,11 +319,13 @@ class ControllerRecord {
   }
 
   public function save(){
+    // creates record
     $model = ucfirst($this->model_name);
     $model::create(self::clean_post($_POST));
   }
 
   public function delete(){
+    // deletes record
     $model = ucfirst($this->model_name);
     $obj = $model::find($_REQUEST['id']);
     $obj->self_destruct();

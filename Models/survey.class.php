@@ -3,6 +3,7 @@
 class Survey extends ModelRecord{
 
   public static function display_create_form(){
+    // displays html form with blank fields
     echo "<form action='../../Controllers/survey_controller.class.php?action=save' method='post'>";
     echo "Name: <input type='text' name='name' /><br />";
     echo "Description: <textarea name='description'></textarea><br />";
@@ -13,6 +14,7 @@ class Survey extends ModelRecord{
   }
 
   public function display_edit_form(){
+    // displays html form with field values from object
     echo "<form action='../../Controllers/survey_controller.class.php?action=update' method='post'>";
     echo "<input type='hidden' name='id' value=".$this->id." />";
     echo "Name: <input type='text' name='name' value=".$this->name." /><br />";
@@ -23,14 +25,17 @@ class Survey extends ModelRecord{
     echo "</form>";
   }
   public function questions(){
+    // returns question objects related to this survey object
     include_once 'question.class.php';
     return $this->get_dependents('question');
   }
   public function user_surveys(){
+    // returns user_survey objects related to this survey object
     include_once 'user_survey.class.php';
     return $this->get_dependents('user_survey');
   }
   public function donations(){
+    // returns donation objects related to this survey object
     include_once 'donation.class.php';
     return $this->get_dependents('donation');
   }

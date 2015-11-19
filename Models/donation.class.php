@@ -2,6 +2,7 @@
 
 class Donation extends ModelRecord{
   public static function display_create_form(){
+    // displays html form with blank fields
     echo "<form action='../../Controllers/donation_controller.class.php?action=save' method='post'>";
   	echo "User ID: <input type='text' name='userid' /><br />";
   	echo "Charity ID: <input type='text' name='charityid' /><br />";
@@ -12,6 +13,7 @@ class Donation extends ModelRecord{
   }
 
   public function display_edit_form(){
+    // displays html form with field values from object
     echo "<form action='../../Controllers/donation_controller.class.php?action=update' method='post'>";
     echo "<input type='hidden' name='id' value=".$this->id." />";
   	echo "User ID: <input type='text' name='userid' value='".$this->userid."' /><br />";
@@ -23,6 +25,7 @@ class Donation extends ModelRecord{
   }
 
   public function payments(){
+    // returns payment objects related to this donation object
     include_once 'payment.class.php';
     return $this->get_dependents('payment');
   }

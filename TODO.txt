@@ -45,6 +45,7 @@ universal snake_case naming conventions
 
 Controllers______->
 eventually separate back out the base class
+add show action to all controllers
 
 Views____________->
 Login/Signup (User Create)
