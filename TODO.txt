@@ -7,7 +7,7 @@ Your project should take 7 minutes to present and should include the following i
 (x) - ER Diagram
 (x) - Table DDL (minimum 7)
 (x) - View DDL (minimum 1)
-() - Procedures DDL (minimum 1)
+(x) - Procedures DDL (minimum 1)
 () - Function DDL (minimum 1)
 () - Trigger DDL (minimum 1)
 (x) - DML Statements that are driven by user forms
@@ -37,6 +37,13 @@ ______________11/18/2015____________
 			so that it can be displayed after render
 
 	modelrecord find should error appropriately if not found
+
+	call complete_survey(userid, surveyid)
+
+	TRIGGER: on response insert, check if all questions from survey have a response. Then if so, set completion_date(user_survey) and call COMPLETE_SURVEY
+
+	FUNCTION: Formatting - either pennies to dollars or datetime to correct date
+
 
 Models___________->
 ModelRecord::find should account for record not found
