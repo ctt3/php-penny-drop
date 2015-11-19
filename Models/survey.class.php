@@ -40,6 +40,11 @@ class Survey extends ModelRecord{
     return $this->get_dependents('donation');
   }
 
+  public function total_cost(){
+    // returns available_surveys*amount_earnable via MySQL view
+    return Database::select("survey_costs", "id = " . $this->id)[0]['total'];
+  }
+
   public function self_destruct(){
     //destroy dependents then call super
     foreach($this->questions() as $index => $obj)$obj->self_destruct();
