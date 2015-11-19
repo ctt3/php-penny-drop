@@ -26,6 +26,12 @@ class Charity extends ModelRecord{
     include_once 'donation.class.php';
     return $this->get_dependents('donation');
   }
+
+  public function self_destruct(){
+    //destroy dependents then call super
+    foreach($this->donations() as $index => $obj)$obj->self_destruct();
+    parent::self_destruct();
+  }
 }
 
 ?>

@@ -29,6 +29,12 @@ class Donation extends ModelRecord{
     include_once 'payment.class.php';
     return $this->get_dependents('payment');
   }
+
+  public function self_destruct(){
+    //destroy dependents then call super
+    foreach($this->payments() as $index => $obj)$obj->self_destruct();
+    parent::self_destruct();
+  }
 }
 
 ?>

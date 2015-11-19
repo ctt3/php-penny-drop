@@ -25,5 +25,11 @@ class Question extends ModelRecord{
     include_once 'response.class.php';
     return $this->get_dependents('response');
   }
+
+  public function self_destruct(){
+    //destroy dependents then call super
+    foreach($this->responses() as $index => $obj)$obj->self_destruct();
+    parent::self_destruct();
+  }
 }
 ?>

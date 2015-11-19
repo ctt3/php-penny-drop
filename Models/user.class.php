@@ -34,6 +34,13 @@ class User extends ModelRecord{
     include_once 'user_survey.class.php';
     return $this->get_dependents('user_survey');
   }
+
+  public function self_destruct(){
+    //destroy dependents then call super
+    foreach($this->surveys() as $index => $obj)$obj->self_destruct();
+    foreach($this->donations() as $index => $obj)$obj->self_destruct();
+    parent::self_destruct();
+  }
 }
 
 ?>
