@@ -9,7 +9,7 @@ Your project should take 7 minutes to present and should include the following i
 (x) - View DDL (minimum 1)
 (x) - Procedures DDL (minimum 1)
 (x) - Function DDL (minimum 1)
-() - Trigger DDL (minimum 1)
+(x) - Trigger DDL (minimum 1)
 (x) - DML Statements that are driven by user forms
 (x) - Simple user forms
 (x) - Simple reports
