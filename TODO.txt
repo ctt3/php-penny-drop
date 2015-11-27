@@ -47,6 +47,8 @@ ______________11/18/2015____________
 
 	About page that describes the process of completing surveys, getting pennies, and then spending them on charities.
 
+	All Data Manipulation in Modals***
+
 Models___________->
 ModelRecord::find should account for record not found
 ModelRecord::delete should account for record not found

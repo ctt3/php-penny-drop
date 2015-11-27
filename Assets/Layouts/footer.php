@@ -1,5 +1,3 @@
 <footer class="footer">
-  <div class="container">
-    <p class="text-muted">Place sticky footer content here.</p>
-  </div>
+  <div class="penny_image"></div>
 </footer>
