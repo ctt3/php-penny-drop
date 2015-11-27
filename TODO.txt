@@ -38,12 +38,14 @@ ______________11/18/2015____________
 
 	modelrecord find should error appropriately if not found
 
-	call complete_survey(userid, surveyid)
+	User needs a logged_in field that gets updated at each request if within time limit.
+		-if outside time limit, the user is logged out.	
+		-refresh_log_in procedure? -> called by logged_in? method on user class
 
-	TRIGGER: on response insert, check if all questions from survey have a response. Then if so, set completion_date(user_survey) and call COMPLETE_SURVEY
+	Clicking on (JS/AJAX) navbar activates button, deactivates previous button
+		- replaces html in #section.container with new page content
 
-	FUNCTION: Formatting - either pennies to dollars or datetime to correct date
-
+	About page that describes the process of completing surveys, getting pennies, and then spending them on charities.
 
 Models___________->
 ModelRecord::find should account for record not found

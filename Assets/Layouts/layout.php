@@ -28,7 +28,7 @@
 			?>
 		</div>
 		<div id="section" class="container">
-		    <?php if(isset($content)) { include $content; } ?>
+    	<?php if(isset($content)) { include $content; } ?>
 		</div>
 		<div id="footer">
 			<?php 

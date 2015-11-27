@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">PennyDrop</a>
+      <p class="navbar-brand">PennyDrop</p>
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
@@ -15,6 +15,7 @@
         <li><a href="#about">Charities</a></li>
         <li><a href="#contact">Surveys</a></li>
         <li><a href="#contact">MyPennies</a></li>
+        <li><a href="#contact">About</a></li>
       </ul>
     </div>
   </div>

@@ -6,10 +6,8 @@ if (!isset($content)) {
     exit;
 }
 ?>
-<div class="container">
-  <div class="page-header">
-    <h1>Sticky footer with fixed navbar</h1>
-  </div>
-  <p class="lead">Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with <code>padding-top: 60px;</code> on the <code>body > .container</code>.</p>
-  <p>Back to <a href="../sticky-footer">the default sticky footer</a> minus the navbar.</p>
+<div class="jumbotron">
+  <h1 class="text-center">PennyDrop</h1>
+  <p class="lead text-center">Welcome to a magical place where giving to those in need requires only time and thought.</p>
+	<p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
 </div>
