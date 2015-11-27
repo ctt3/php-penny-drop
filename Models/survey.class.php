@@ -41,7 +41,6 @@ class Survey extends ModelRecord{
   }
 
   public function total_cost(){
-    // returns available_surveys*amount_earnable via MySQL view
     return Database::select("survey_costs", "id = " . $this->id)[0]['total'];
   }
 
