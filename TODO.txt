@@ -42,9 +42,6 @@ ______________11/18/2015____________
 		-if outside time limit, the user is logged out.	
 		-refresh_log_in procedure? -> called by logged_in? method on user class
 
-	Clicking on (JS/AJAX) navbar activates button, deactivates previous button
-		- replaces html in #section.container with new page content
-
 	About page that describes the process of completing surveys, getting pennies, and then spending them on charities.
 
 	All Data Manipulation in Modals***
@@ -76,3 +73,17 @@ Can Donate to Charity (available_pennies decrease)
 Can Complete Survey (available_pennies increase)
 Can Edit User/Charity/Survey info
 Pays for Cart
+
+
+**********************************************************
+12/2/2015
+**********************************************************
+
+penniesAvailable container
+User login/logout
+charity/survey show
+user show
+separate reports into separate module
+take a survey - get pennies
+give to a charity - give pennies
+about section

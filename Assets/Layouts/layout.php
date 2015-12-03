@@ -13,12 +13,7 @@
 		<!-- Bootstrap JS-->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-	
-		<!-- Custom JS -->
-		<?php 
-		$layout_js_url = "http://" . $_SERVER["SERVER_NAME"] . "/assets/scripts/site_layout.js";
-		echo "<script src='" . $layout_js_url . "'></script>";
-		?>
+
 	</head>
 	<body>
 		<div id="nav">
@@ -38,3 +33,14 @@
 		</div>
 	</body>
 </html>
+
+<script type='text/javascript'>
+
+function replace_section(file) {
+	$("#section.container").load(file);
+}
+
+function use_nav(el){
+	el.closest('li').addClass("active").siblings().removeClass("active");
+}
+</script>
