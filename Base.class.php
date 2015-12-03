@@ -82,6 +82,7 @@ class Database {
     // Action: Builds and executes select sql
     // Output: Array of selected records
     $sql = "select * from " . $table . " where " . $conditions;
+    echo $sql;
     $result = self::execute_query($sql);
     if($result != false) {
       $rows = array();
@@ -141,9 +142,11 @@ class ModelRecord {
     // Output: Object
     $table_name = from_camel_case( static::class );
     $result = Database::select($table_name, "id = " . $id)[0];
-    $obj = new static();
-    static::assign_instance_variables($obj, $result);
-    return $obj;
+    if ($result != false){
+      $obj = new static();
+      static::assign_instance_variables($obj, $result);
+      return $obj;
+    }else { return $result; }
   }
 
   public static function create($attribute_hash){

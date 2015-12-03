@@ -81,9 +81,14 @@ Pays for Cart
 
 penniesAvailable container
 User login/logout
+login.php should be method in user controller
+
 charity/survey show
 user show
-separate reports into separate module
+
+**separate reports into separate module
+
 take a survey - get pennies
 give to a charity - give pennies
+
 about section
