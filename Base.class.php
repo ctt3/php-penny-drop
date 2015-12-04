@@ -82,7 +82,6 @@ class Database {
     // Action: Builds and executes select sql
     // Output: Array of selected records
     $sql = "select * from " . $table . " where " . $conditions;
-    echo $sql;
     $result = self::execute_query($sql);
     if($result != false) {
       $rows = array();
